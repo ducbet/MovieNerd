@@ -1,16 +1,17 @@
 <% provide :title, t(".search_by_title") %>
 <h1><%= t ".search_by_title" %></h1>
 
-<%= form_for :movie, url: searchs_path do |f| %>
-  <%= f.label :title, t(".title") %>
-  <%= f.text_field :title, class: "form-control" %>
+<%= form_tag searchs_path do %>
+  <%= label_tag :keyword, t(".title") %>
+  <%= text_field_tag :keyword, @keyword, class: "form-control" %>
 
-  <%= f.submit t(".search"), class: "btn btn-primary" %>
+  <%= submit_tag t(".search"), class: "btn btn-primary" %>
 <% end %>
 
-<% if @movies.nil? %>
+<% if @movies.nil? || @movies.empty? %>
   <%= t ".no_result" %>
 <% else %>
-  <h5><%= pluralize @movies.length, t(".movie") %></h5>
+  <%= paginate @movies, theme: "twitter-bootstrap-3" %>
   <%= render @movies %>
+  <%= paginate @movies, theme: "twitter-bootstrap-3" %>
 <% end %>

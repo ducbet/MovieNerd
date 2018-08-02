@@ -9,14 +9,32 @@ user2 = User.create! name: "Trieu Minh Duc",
                      user_type: 0
 
 movie = Movie.create! title: "Wall-E",
-                      duration: 115
+  cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
+  director: Faker::Name.name,
+  description: Faker::Lorem.sentence(10),
+  duration: Faker::Number.between(60, 150),
+  rated: 0,
+  language: "Eng",
+  genre: "Animation | Adventure | Family | Sci-Fi"
 movie2 = Movie.create! title: "World wall Z",
-                      duration: 115
+  cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
+  director: Faker::Name.name,
+  description: Faker::Lorem.sentence(10),
+  duration: Faker::Number.between(60, 150),
+  rated: 1,
+  language: "Eng",
+  genre: "Action | Adventure | Horror | Sci-Fi | Thriller"
 
 1000.times do |n|
   title = Faker::Lorem.sentence 5
-  Movie.create! title: "#{n} - #{title}",
-                duration: 90
+    Movie.create! title: "#{n} - #{title}",
+    cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
+    director: Faker::Name.name,
+    description: Faker::Lorem.sentence(10),
+    duration: Faker::Number.between(60, 150),
+    rated: Faker::Number.between(0, 3),
+    language: "Eng",
+    genre: "Action | Adventure | Horror | Sci-Fi | Thriller"
 end
 
 room = Room.create! name: "G1",
