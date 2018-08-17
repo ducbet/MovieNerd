@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :correct_user, only: [:show]
 
+  def index
+    @order = Order.find_by id: params[:id]
+  end
+
   def show; end
 
   def create
@@ -64,5 +68,4 @@ class OrdersController < ApplicationController
     url_cancel = "http%3A%2F%2F0.0.0.0%3A3000%2F"
 
     url = "https://www.baokim.vn/payment/product/version11?business=#{business}&id=&order_description=#{order_description}&product_name=#{product_name}&product_price=#{product_price}&product_quantity=#{product_quantity}&total_amount=#{total_amount}&url_cancel=#{url_cancel}&url_detail=#{url_detail}&url_success=#{url_success}"
-  end
 end

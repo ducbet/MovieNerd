@@ -2,7 +2,10 @@ $("#create_room_data").data("map", <%= raw @support.map %>);
 $("#create_room_data").data("deleted_seats",
   <%= raw @support.deleted_seats %>);
 
-$("form_area").html(
+<% provide :button_text, t("admin.rooms.new.button_text") %>
+<% provide :url, admin_rooms_path %>
+
+$("#form_area").html(
   "<%= escape_javascript(render("form", support: @support)) %>");
 
 $(document).trigger("turbolinks:load");

@@ -137,6 +137,10 @@ en:
             screening_start:
               blank: "Must have screening time"
               invalid: "Movie can't be shown at this time please choose another time"
+        room:
+          attributes:
+            name:
+              blank: "Room'name can't be blank"
   errors:
     format: "%{message}"
 
@@ -273,7 +277,6 @@ en:
       screen: "Screen"
       select_seat: "Please choose seats"
 
-
   activate_mail:
     title: "Account activation"
     activate: "Activate"
@@ -364,3 +367,14 @@ en:
     go_back: "You can go back to home page by clicking the button below."
     back: "Back to "
     home_page: "home page"
+
+  orders:
+    room: "Room: "
+    order: "Order no."
+    seats: "Chosen seats: "
+    movie: "Movie: "
+    time: "Time: "
+
+  seats:
+    row: "Row:"
+    number: "Number:"

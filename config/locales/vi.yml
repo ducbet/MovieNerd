@@ -143,6 +143,10 @@ vi:
             screening_start:
               blank: "Xin hãy chọn giờ chiếu"
               invalid: "Phim không thể chiếu vào giờ này xin hãy chọn giờ khác"
+        room:
+          attributes:
+            name:
+              blank: "Tên phòng không được để trống"
 
   errors:
     format: "%{message}"
@@ -221,6 +225,8 @@ vi:
         user: "Quản lý người dùng"
         all_users: "Tất cả người dùng"
     rooms:
+      title: "Quản lý phòng chiếu"
+      not_available: "Phòng chiếu này chưa có lịch chiếu"
       index:
         create_room: "Thêm phòng"
       not_available: "Phòng chiếu này chưa có lịch chiếu"
@@ -274,6 +280,7 @@ vi:
       next: "Tiếp"
       screen: "Màn chiếu"
       select_seat: "Vui lòng chọn ghế"
+      room: "Room "
 
   activate_mail:
     title: "Kích hoạt tài khoản"
@@ -392,3 +399,14 @@ vi:
     go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
     back: "Quay lại "
     home_page: "trang chủ"
+
+  orders:
+    room: "Phòng chiếu: "
+    order: "Yêu cầu số "
+    seats: "Ghế đã chọn: "
+    movie: "Phim: "
+    time: "Thời gian: "
+
+  seats:
+    row: "Hàng:"
+    number: "Ghế:"
