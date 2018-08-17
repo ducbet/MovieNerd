@@ -29,7 +29,7 @@ user5 = User.create! name: "Trieu Minh Duc3",
                      activated: true,
                      activated_at: Time.zone.now
 
-image_data = Rails.root.join("public/uploads/movie/picture/1/Avengers_Infinity_War_Imax_poster.jpg").open
+image_data = Rails.root.join("app/assets/images/default-movie.jpg").open
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
@@ -51,8 +51,8 @@ movie2 = Movie.create! title: "World wall Z",
   release_date: Time.current.tomorrow,
   picture: image_data
 
-100.times do |n|
-  title = Faker::Lorem.sentence 5
+30.times do |n|
+  title = Faker::Lorem.sentence 4
     Movie.create! title: "#{n} - #{title}",
     cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
     director: Faker::Name.name,
@@ -60,7 +60,7 @@ movie2 = Movie.create! title: "World wall Z",
     duration: Faker::Number.between(60, 150),
     rated: Faker::Number.between(0, 3),
     language: "Eng",
-    genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
+    genre: "Action | Adventure | Horror | Sci-Fi",
     release_date: Time.current.tomorrow,
     picture: image_data
 end
