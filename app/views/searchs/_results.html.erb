@@ -1,11 +1,12 @@
-<% if movies.nil? || movies.empty? %>
+<% if results.nil? || results.empty? %>
   <%= t ".no_result" %>
 <% else %>
+  <div id="paginator">
+      <%= paginate results, theme: "twitter-bootstrap-3", remote: true %>
+  </div>
   <div class="content main-movie">
-    <%= paginate movies, theme: "twitter-bootstrap-3", remote: true %>
     <ul id="movies" class="movies product-grid product-grid--max-4-col center">
-      <%= render movies %>
+      <%= render results %>
     </ul>
-    <%= paginate movies, theme: "twitter-bootstrap-3", remote: true %>
   </div>
 <% end %>

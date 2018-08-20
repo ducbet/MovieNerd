@@ -1,1 +1,2 @@
-$("#search-results").html("<%= j render("searchs/results", movies: @movies) %>");
+$("#search-results").html("<%= j render(partial: "searchs/results", locals: {results: @movies}) %>");
+$("#paginator").html("<%= j paginate(@movies, theme: 'twitter-bootstrap-3', remote: true) %>");

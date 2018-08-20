@@ -4,7 +4,7 @@ class Admin::SearchsController < Admin::BaseController
   def index
     respond_to do |format|
       format.html{render "searchs/index"}
-      format.js{render "searchs/index.js.erb"}
+      format.js{render "searchs/index"}
     end
   end
 
