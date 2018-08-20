@@ -18,11 +18,7 @@ Rails.application.routes.draw do
     namespace :admin do
       get "/", to: "dashboards#index"
       resources :movies
-      resources :movies, only: [:searchs] do
-        collection do
-          resources :searchs, only: [:index, :create]
-        end
-      end
+      resources :searchs, only: [:index, :create]
       resources :screenings, only: [:index, :new, :create, :destroy]
       resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
@@ -30,13 +26,11 @@ Rails.application.routes.draw do
       resources :rooms, only: [:index, :new, :create, :show, :edit, :update]
     end
     resources :movies, only: [:searchs, :screenings] do
-      collection do
-        resources :searchs, only: [:index, :create]
-      end
       member do
         resources :screenings, only: [:index]
       end
     end
+    resources :searchs, only: [:index, :create]
     resources :account_activations, only: [:edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :rooms, only: [:show]
