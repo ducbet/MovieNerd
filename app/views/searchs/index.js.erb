@@ -1,1 +1,1 @@
-$("#search-results").html("<%= j render("results", movies: @movies) %>");
+$("#search-results").html("<%= j render partial: "searchs/results", results: @movies %>");

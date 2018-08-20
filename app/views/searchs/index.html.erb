@@ -1,6 +1,5 @@
 <% provide :title, t(".search_by_title") %>
 <h1><%= t ".search_by_title" %></h1>
-
 <div id="search-results">
-  <%= render "results", movies: @movies %>
+  <%= render "searchs/results", results: @movies %>
 </div>

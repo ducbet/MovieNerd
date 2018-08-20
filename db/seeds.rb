@@ -100,8 +100,10 @@ movie.screenings.create! room_id: room1.id,
 movie.screenings.create! room_id: room2.id,
                          screening_start: Time.current.tomorrow + 30.hours
 
-order = user1.orders.create! screening_id: screening.id
-order2 = user2.orders.create! screening_id: screening.id
+order = user1.orders.create! screening_id: screening.id, paid: 1
+order2 = user2.orders.create! screening_id: screening.id, paid: 1
+user2.orders.create! screening_id: screening.id, paid: 1
+user2.orders.create! screening_id: screening.id, paid: 1
 
 seat_id = 2
 order.movie_tickets.create! seat_id: seat_id, screening_id: order.screening.id

@@ -1,16 +1,39 @@
-<%= t ".info" %></br>
-<%= t ".username" %>: <%= @order.user.name %></br>
+<%= stylesheet_link_tag "ticket" %>
+<section>
+  <div class="circle">
+    <div class="event"><%= t ".event" %></div>
+    <div class="title"><%= @order.user.name %></div>
+  </div>
+  <div class="special"></div>
+  <div class="special"></div>
+  <div class="special"></div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".room" %></span><span>A</span>
+    </div>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".movie" %></span><span></span>
+    </div>
+    <%= @order.screening.movie.title %>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".seats" %></span><span><%= @order.seats.size %></span>
+    </div>
+    <% @order.seats.map(&:name).sort.each do |seat_name| %>
+      <%= seat_name %>
+    <% end %>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".time" %></span>
+    </div>
+    <%= @order.screening.screening_start.strftime("%H:%M %m/%d") %>
+  </div>
+</section>
 
-<%= t ".movie" %>: <%= @order.screening.movie.title %></br>
-<%= t ".time" %>: <%= @order.screening.screening_start.strftime("%H:%M") %>
-</br>
-
-<%= t ".seats" %></br>
-<ul>
-  <% @order.seats.each do |seat| %>
-    <li><%= seat.name %></li>
-  <% end %>
-</ul>
-
-
-<%= t ".room" %>: <%= @order.screening.room.name %></br>
+<aside>
+  <%= render "bar_code" %>
+</aside>
