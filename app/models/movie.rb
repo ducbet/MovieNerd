@@ -40,8 +40,13 @@ class Movie < ApplicationRecord
   pg_search_scope :full_text_search,
     against: {
       title: "A",
-      director: "B",
-      description: "C"
+      cast: "B",
+      director: "C",
+      description: "D"
+    },
+    using: {
+      tsearch: {prefix: true},
+      trigram: {}
     }
   before_save :beatify
 

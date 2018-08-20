@@ -1,0 +1,29 @@
+<div class="main_nav admin_nav">
+  <div class="nav fl">
+    <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to t("layouts.header.home"), admin_path %></li>
+        <li><%= link_to t("layouts.header.movie"), admin_movies_path %></li>
+        <li><%= link_to t("layouts.header.screening"), "#" %></li>
+        <li><%= link_to t("layouts.header.room"), admin_rooms_path %></li>
+        <li><%= link_to t("layouts.header.users"), admin_users_path %></li>
+        <li>
+          <div id="header-search" class="skip-content">
+            <div class="header-search-left">
+              <% if request.original_url.start_with? admin_searchs_url %>
+                <%= form_tag admin_searchs_path,
+                  class: "form-inline", remote: true do %>
+                  <%= render "searchs/search_form_content", keyword: @keyword %>
+                <% end %>
+              <% else %>
+                <%= form_tag admin_searchs_path, class: "form-inline" do %>
+                  <%= render "searchs/search_form_content", keyword: @keyword %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

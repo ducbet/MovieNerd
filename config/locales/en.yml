@@ -61,8 +61,9 @@ en:
       search_by_title: "Search by title"
       search: "Search"
       title: "Title"
-      no_result: "No result"
       movie: "movie"
+    results:
+      no_result: "No result"
 
   movie:
     detail: "Details"

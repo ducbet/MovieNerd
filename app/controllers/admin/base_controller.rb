@@ -1,5 +1,4 @@
 class Admin::BaseController < ApplicationController
-  layout "admin/index"
   include UsersHelper
   include SessionsHelper
   before_action :admin_required
