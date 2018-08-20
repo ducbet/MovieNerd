@@ -30,7 +30,7 @@ class Room < ApplicationRecord
     new_map_element.each do |seat_name, status|
       seat_toggle seat_name, status
     end
-    update_attributes seat_no: seats.size
+    update_attributes seat_no: seats.count
   end
 
   def row_num

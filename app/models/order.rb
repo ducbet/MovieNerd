@@ -13,5 +13,5 @@ class Order < ApplicationRecord
   def delete_unpaid
     destroy if unpaid?
   end
-  handle_asynchronously :delete_unpaid, run_at: Proc.new { 30.seconds.from_now }
+  handle_asynchronously :delete_unpaid, run_at: Proc.new { 1.minutes.from_now }
 end

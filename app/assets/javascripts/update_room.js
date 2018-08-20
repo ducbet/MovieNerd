@@ -32,6 +32,7 @@ function update_room($room_data) {
     }
   });
   sc.get(sc.seatIds).status("selected");
+  deleted_seats = new Set();
   var dels = $room_data.data("deleted_seats");
   sc.get(dels).status("deleted");
   dels.forEach(function(del) {

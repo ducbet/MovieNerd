@@ -264,7 +264,7 @@ ul.book-right li {
 
 @media (max-width: 1440px){
 	.main {
-		width: 50%;
+		width: 100%;
 	}
 	.content h1 {
 		font-size: 33px;
@@ -272,22 +272,22 @@ ul.book-right li {
 }
 @media (max-width: 1366px){
 	.main {
-		width: 90%;
+		width: 100%;
 	}
 }
 @media (max-width: 1280px){
 	.main {
-		width: 56%;
+		width: 100%;
 	}
 }
 @media (max-width: 1080px){
 	.main {
-		width: 67%;
+		width: 100%;
 	}
 }
 @media (max-width: 1024px){
 	div.seatCharts-container {
-		width: 57%;
+		width: 100%;
 		padding: 0 13px 0 0;
 	}
 	.booking-details {
