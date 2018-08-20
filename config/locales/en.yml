@@ -219,6 +219,7 @@ en:
         user: "Users Management"
         all_users: "All users"
     rooms:
+      title: "Room Managerment"
       not_available: "This room has no screen time"
       index:
         create_room: "Create room"

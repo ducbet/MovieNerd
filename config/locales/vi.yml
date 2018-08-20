@@ -220,6 +220,7 @@ vi:
         user: "Quản lý người dùng"
         all_users: "Tất cả người dùng"
     rooms:
+      title: "Quản lý phòng chiếu"
       not_available: "Phòng chiếu này chưa có lịch chiếu"
       index:
         create_room: "Thêm phòng"

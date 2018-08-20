@@ -1,5 +1,15 @@
-<%= link_to t(".create_room"), new_admin_room_path %>
-</br>
-<%= paginate @rooms %>
-<%= render @rooms %>
-<%= paginate @rooms %>
+<%= provide :title, t(".title") %>
+<div id="paginator">
+  <%= paginate @rooms, remote: true %>
+</div>
+<div class="product-view">
+  <div class="page-title product-view">
+    <span class="h1"><%= t "layouts.header.room" %></span>
+  </div>
+  <div class="content main-movie">
+    <ul id="rooms">
+      <%= render @rooms %>
+    </ul>
+  </div>
+</div>
+<%= link_to t(".create_room"), new_admin_room_path, class: "btn-lg btn-primary" %>
