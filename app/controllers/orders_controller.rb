@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 
   def correct_user
     @order = Order.find_by id: params[:id]
-    redirect_to root_url unless current_user == @order.user
+    redirect_to root_url if current_user == @order.user
   end
 
   def baokim(product_name, detail_movie, product_quantity, order_id)
@@ -56,12 +56,12 @@ class OrdersController < ApplicationController
     order_description = ""
     product_price = Settings.price_vnd
     total_amount = product_price * product_quantity
-    # url_detail = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Fmovies%2F#{detail_movie}"
-    # url_cancel = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Fvi%2Fabout"
-    # url_success = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Fvi%2Fmovies%2F5"
-    url_success = "http%3A%2F%2F0.0.0.0%3A3000%2Faccepts%2F#{order_id}"
-    url_detail = "http%3A%2F%2F0.0.0.0%3A3000%2Fmovies%2F#{detail_movie}"
-    url_cancel = "http%3A%2F%2F0.0.0.0%3A3000%2Ffails%3Forder_id=#{order_id}"
+    url_detail = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Fmovies%2F#{detail_movie}"
+    url_cancel = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Ffails%3Forder_id=#{order_id}"
+    url_success = "https%3A%2F%2Fmovie-nerd.herokuapp.com%2Faccepts%2F#{order_id}"
+    # url_success = "http%3A%2F%2F0.0.0.0%3A3000%2Faccepts%2F#{order_id}"
+    # url_detail = "http%3A%2F%2F0.0.0.0%3A3000%2Fmovies%2F#{detail_movie}"
+    # url_cancel = "http%3A%2F%2F0.0.0.0%3A3000%2Ffails%3Forder_id=#{order_id}"
 
     url = "https://www.baokim.vn/payment/product/version11?business=#{business}&id=&order_description=#{order_description}&product_name=#{product_name}&product_price=#{product_price}&product_quantity=#{product_quantity}&total_amount=#{total_amount}&url_cancel=#{url_cancel}&url_detail=#{url_detail}&url_success=#{url_success}"
   end

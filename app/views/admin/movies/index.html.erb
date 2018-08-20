@@ -1,7 +1,7 @@
 <%= provide :title, t(".title") %>
 <% provide :button_text, t(".add_movie") %>
 <div id="paginator">
-  <%= paginate @movies, remote: true %>
+  <%= paginate @movies, theme: "twitter-bootstrap-3", remote: true %>
 </div>
 <div class="content main-movie">
   <ul id="movies" class="movies product-grid product-grid--max-4-col center">
