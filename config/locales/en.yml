@@ -137,6 +137,10 @@ en:
             screening_start:
               blank: "Must have screening time"
               invalid: "Movie can't be shown at this time please choose another time"
+        room:
+          attributes:
+            name:
+              blank: "Room'name can't be blank"
   errors:
     format: "%{message}"
 
