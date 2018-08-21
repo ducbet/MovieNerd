@@ -1,54 +1,40 @@
 user1 = User.create! name: "TMD",
                      email: "a@a.a",
                      password: "asdasd",
-                     user_type: 1,
+                     user_type: 0,
                      activated: true,
                      activated_at: Time.zone.now
 user2 = User.create! name: "Trieu Minh Duc0",
                      email: "b@b.b",
                      password: "asdasd",
-                     user_type: 0,
+                     user_type: 1,
                      activated: true,
                      activated_at: Time.zone.now
 user3 = User.create! name: "Trieu Minh Duc1",
-                     email: "c@b.b",
+                     email: "c@c.c",
                      password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
-user4 = User.create! name: "Trieu Minh Duc2",
-                     email: "d@b.b",
-                     password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
-user5 = User.create! name: "Trieu Minh Duc3",
-                     email: "r@b.b",
-                     password: "asdasd",
-                     user_type: 0,
+                     user_type: 2,
                      activated: true,
                      activated_at: Time.zone.now
 
-<<<<<<< e404bd943a65f883ad4441f11d669a947484258e
-image_data = Rails.root.join("public/uploads/movie/picture/1/wall_e.jpeg").open
-=======
-image_data = Rails.root.join("app/assets/images/default-movie.jpg").open
->>>>>>> screening
+image_data = MiniMagick::Image.open(Rails.root.join("app/assets/images/default-movie.jpg"))
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
-  description: Faker::Lorem.sentence(10),
-  duration: Faker::Number.between(60, 150),
+  description: Faker::Lorem.sentence(word_count: 10),
+  duration: Faker::Number.between(from: 60, to: 150),
   rated: 0,
   language: "Eng",
   genre: "Animation | Adventure | Family | Sci-Fi",
   release_date: Time.current.tomorrow,
   picture: image_data
+
+
 movie2 = Movie.create! title: "World wall Z",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
-  description: Faker::Lorem.sentence(10),
-  duration: Faker::Number.between(60, 150),
+  description: Faker::Lorem.sentence(word_count: 10),
+  duration: Faker::Number.between(from: 60, to: 150),
   rated: 1,
   language: "Eng",
   genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
@@ -56,13 +42,13 @@ movie2 = Movie.create! title: "World wall Z",
   picture: image_data
 
 30.times do |n|
-  title = Faker::Lorem.sentence 4
+  title = Faker::Lorem.sentence word_count: 4
     Movie.create! title: "#{n} - #{title}",
     cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
     director: Faker::Name.name,
-    description: Faker::Lorem.sentence(10),
-    duration: Faker::Number.between(60, 150),
-    rated: Faker::Number.between(0, 3),
+    description: Faker::Lorem.sentence(word_count: 10),
+    duration: Faker::Number.between(from: 60, to: 150),
+    rated: Faker::Number.between(from: 0, to: 3),
     language: "Eng",
     genre: "Action | Adventure | Horror | Sci-Fi",
     release_date: Time.current.tomorrow,

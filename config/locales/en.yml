@@ -172,6 +172,8 @@ en:
     screening_delete_success: "Deleted screening"
     edit_faild: "Edit room failed"
     select_seat_failed: "Select seat faild. Please try again"
+    invalid_order: "Can't see other user's order."
+    unpaid_order: "Order hasn't been paid."
 
   sessions:
     new:
@@ -257,8 +259,14 @@ en:
       description: "Description"
 
   orders:
+    index:
+      room: "Room: "
+      order: "Order no."
+      seats: "Chosen seats: "
+      movie: "Movie: "
+      time: "Time: "
     show:
-      info: "Order info"
+      event: "Order info"
       username: "User"
       movie: "Movie"
       time: "Time"
@@ -367,13 +375,6 @@ en:
     go_back: "You can go back to home page by clicking the button below."
     back: "Back to "
     home_page: "home page"
-
-  orders:
-    room: "Room: "
-    order: "Order no."
-    seats: "Chosen seats: "
-    movie: "Movie: "
-    time: "Time: "
 
   seats:
     row: "Row:"

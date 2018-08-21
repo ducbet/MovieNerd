@@ -1,6 +1,6 @@
 class Admin::RoomsController < Admin::BaseController
   def index
-    @rooms = Room.page(params[:page]).per Settings.admin.per_page
+    @rooms = Room.page(params[:page]).per_page Settings.admin.per_page
   end
 
   def new

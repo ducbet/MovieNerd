@@ -179,6 +179,8 @@ vi:
     screening_delete_success: "Xoá lịch chiếu thành công"
     edit_faild: "Cập nhật phòng thất bại"
     select_seat_failed: "Chọn ghế không thành công. Vui lòng thử lại."
+    invalid_order: "Không thể xem order của người khác."
+    unpaid_order: "Order này chưa được thanh toán."
 
   sessions:
     new:
@@ -261,6 +263,12 @@ vi:
       description: "Giới thiệu"
 
   orders:
+    index:
+      room: "Phòng chiếu: "
+      order: "Yêu cầu số "
+      seats: "Ghế đã chọn: "
+      movie: "Phim: "
+      time: "Thời gian: "
     show:
       event: "Vé xem phim"
       username: "Thành viên"
@@ -399,13 +407,6 @@ vi:
     go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
     back: "Quay lại "
     home_page: "trang chủ"
-
-  orders:
-    room: "Phòng chiếu: "
-    order: "Yêu cầu số "
-    seats: "Ghế đã chọn: "
-    movie: "Phim: "
-    time: "Thời gian: "
 
   seats:
     row: "Hàng:"

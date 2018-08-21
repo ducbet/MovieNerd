@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :correct_user, only: [:show]
+  before_action :correct_order, only: [:show]
 
   def index
-    @order = Order.find_by id: params[:id]
+    @order = Order.find_by(id: params[:id])
+                  .page(params[:page]).per_page Settings.admin.per_page
   end
 
   def show; end
@@ -22,9 +23,10 @@ class OrdersController < ApplicationController
         seat = room.seats.find_by row: row, number: num
         order.movie_tickets.create! seat_id: seat.id, screening_id: params[:screening_id]
       end
-      # redirect_to order_url(order.id)
-      redirect_to baokim(screening.movie.title, screening.movie.id,
-        params_selected_seats.count, order.id)
+      order.paid!
+      redirect_to order_url(order.id)
+      # redirect_to baokim(screening.movie.title, screening.movie.id,
+      #   params_selected_seats.count, order.id)
     end
     rescue
       load_support screening
@@ -33,6 +35,7 @@ class OrdersController < ApplicationController
       respond_to do |format|
         format.js
       end
+    end
   end
 
   private
@@ -50,9 +53,16 @@ class OrdersController < ApplicationController
     params[:selected_seats].split ","
   end
 
-  def correct_user
+  def correct_order
     @order = Order.find_by id: params[:id]
-    redirect_to root_url if current_user == @order.user
+    unless current_user == @order.user
+      flash[:danger] = t "flash.invalid_order"
+      redirect_to root_url
+    end
+    if @order.paid == "unpaid"
+      flash[:danger] = t "flash.unpaid_order"
+      redirect_to root_url
+    end
   end
 
   def baokim(product_name, detail_movie, product_quantity, order_id)
