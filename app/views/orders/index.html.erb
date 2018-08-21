@@ -1,0 +1,25 @@
+<%= provide :title, @order.screening.movie.title %>
+<div class="shedule-item w3-text-brown">
+  <h3>
+    <b>
+      <%= t "orders.order" %>
+      <%= @order.id %>
+    </b>
+  </h3>
+  <p>
+    <b><%= t "orders.movie" %></b>
+    <%= @order.screening.movie.title %>
+  </p>
+  <p>
+    <b><%= t "orders.time" %></b>
+    <%= @order.screening.screening_start %>
+  </p>
+  <p>
+    <b><%= t "orders.room" %></b>
+    <%= @order.screening.room.name %>
+  </p>
+  <p>
+    <b><%= t "orders.seats" %></b>
+    <%= @order.show_seats.join %>
+  </p>
+</div>

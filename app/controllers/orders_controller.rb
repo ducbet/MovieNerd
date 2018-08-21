@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :correct_user, only: [:show]
 
+  def index
+    @order = Order.find_by id: params[:id]
+  end
+
   def show; end
 
   def create
