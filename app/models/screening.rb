@@ -17,7 +17,7 @@ class Screening < ApplicationRecord
     pluck(Arel.sql("date(screening_start)")).uniq
   end)
   scope :by_date, (lambda do |date|
-    where("screening_start > ? AND "\
+    where("screening_start >= ? AND "\
      "screening_start < ?", date, date.tomorrow).order screening_start: :asc
   end)
 

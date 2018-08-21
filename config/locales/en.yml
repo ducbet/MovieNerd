@@ -137,6 +137,10 @@ en:
             screening_start:
               blank: "Must have screening time"
               invalid: "Movie can't be shown at this time please choose another time"
+        room:
+          attributes:
+            name:
+              blank: "Room'name can't be blank"
   errors:
     format: "%{message}"
 
@@ -224,8 +228,9 @@ en:
       title: "Room Managerment"
       not_available: "This room has no screen time"
       index:
+        title: "Room Managerment"
         create_room: "Create room"
-      not_available: "This room has no screen time"
+        not_available: "This room has no screen time"
       new:
         screen: "Screen"
         select_seat: "Create room"

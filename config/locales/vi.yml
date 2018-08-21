@@ -143,6 +143,10 @@ vi:
             screening_start:
               blank: "Xin hãy chọn giờ chiếu"
               invalid: "Phim không thể chiếu vào giờ này xin hãy chọn giờ khác"
+        room:
+          attributes:
+            name:
+              blank: "Tên phòng không được để trống"
 
   errors:
     format: "%{message}"
@@ -225,8 +229,9 @@ vi:
       title: "Quản lý phòng chiếu"
       not_available: "Phòng chiếu này chưa có lịch chiếu"
       index:
+        title: "Quản lý phòng chiếu"
         create_room: "Thêm phòng"
-      not_available: "Phòng chiếu này chưa có lịch chiếu"
+        not_available: "Phòng chiếu này chưa có lịch chiếu"
       new:
         screen: "Màn chiếu"
         select_seat: "Tạo phòng"
