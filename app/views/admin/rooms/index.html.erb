@@ -1,5 +1,5 @@
 <%= link_to t(".create_room"), new_admin_room_path %>
 </br>
-<%= paginate @rooms %>
+<%= paginate @rooms, theme: "twitter-bootstrap-3" %>
 <%= render @rooms %>
-<%= paginate @rooms %>
+<%= paginate @rooms, theme: "twitter-bootstrap-3" %>

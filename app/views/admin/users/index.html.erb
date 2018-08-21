@@ -1,7 +1,7 @@
 <% provide :title, t(".user") %>
 <h1><%= t ".all_users" %></h1>
 <div id="paginator">
-  <%= paginate @user, remote: true %>
+  <%= paginate @user, theme: "twitter-bootstrap-3", remote: true %>
 </div>
 <ul id="users" class="users">
   <%= render @user %>
