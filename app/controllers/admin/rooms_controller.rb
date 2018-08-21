@@ -8,13 +8,12 @@ class Admin::RoomsController < Admin::BaseController
   end
 
   def create
-    @room = Room.new params_name
-    set_map @room, params_map
-    if @room.save
+    @support = new_room params_map
+    @support.room.name = params_name
+    if @support.room.save
       flash[:success] = t "flash.create_room_success"
-      redirect_to admin_room_url(@room)
+      redirect_to admin_room_url(@support.room)
     else
-      @support = new_room params_map
       respond_to do |format|
         format.js
       end
@@ -46,7 +45,7 @@ class Admin::RoomsController < Admin::BaseController
   private
 
   def params_name
-    params.require(:room).permit :name
+    params.require(:room).permit(:name)[:name]
   end
 
   def params_map

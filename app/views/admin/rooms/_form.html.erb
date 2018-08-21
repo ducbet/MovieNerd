@@ -1,5 +1,6 @@
 <%= form_for support.room, url: yield(:url),
   html: {onsubmit: "get_map()"}, remote: true do |f| %>
+  <%= render "shared/error_messages", object: support.room %>
 
   <%= hidden_field_tag :field_map %>
 
