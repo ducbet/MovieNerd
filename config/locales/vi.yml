@@ -143,6 +143,10 @@ vi:
             screening_start:
               blank: "Xin hãy chọn giờ chiếu"
               invalid: "Phim không thể chiếu vào giờ này xin hãy chọn giờ khác"
+        room:
+          attributes:
+            name:
+              blank: "Tên phòng không được để trống"
 
   errors:
     format: "%{message}"
