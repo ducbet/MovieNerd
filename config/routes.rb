@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       collection do
         resources :orders, only: [:show]
       end
+      member do
+        resources :orders, only: [:index]
+      end
     end
     namespace :admin do
       get "/", to: "dashboards#index"

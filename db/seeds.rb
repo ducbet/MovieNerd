@@ -29,7 +29,11 @@ user5 = User.create! name: "Trieu Minh Duc3",
                      activated: true,
                      activated_at: Time.zone.now
 
+<<<<<<< e404bd943a65f883ad4441f11d669a947484258e
 image_data = Rails.root.join("public/uploads/movie/picture/1/wall_e.jpeg").open
+=======
+image_data = Rails.root.join("app/assets/images/default-movie.jpg").open
+>>>>>>> screening
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
@@ -51,8 +55,8 @@ movie2 = Movie.create! title: "World wall Z",
   release_date: Time.current.tomorrow,
   picture: image_data
 
-100.times do |n|
-  title = Faker::Lorem.sentence 5
+30.times do |n|
+  title = Faker::Lorem.sentence 4
     Movie.create! title: "#{n} - #{title}",
     cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
     director: Faker::Name.name,
@@ -60,7 +64,7 @@ movie2 = Movie.create! title: "World wall Z",
     duration: Faker::Number.between(60, 150),
     rated: Faker::Number.between(0, 3),
     language: "Eng",
-    genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
+    genre: "Action | Adventure | Horror | Sci-Fi",
     release_date: Time.current.tomorrow,
     picture: image_data
 end
