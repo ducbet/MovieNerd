@@ -22,7 +22,10 @@ class OrdersController < ApplicationController
         seat = room.seats.find_by row: row, number: num
         order.movie_tickets.create! seat_id: seat.id, screening_id: params[:screening_id]
       end
+
+      # order.paid!
       # redirect_to order_url(order.id)
+
       redirect_to baokim(screening.movie.title, screening.movie.id,
         params_selected_seats.count, order.id)
     end
@@ -52,7 +55,14 @@ class OrdersController < ApplicationController
 
   def correct_user
     @order = Order.find_by id: params[:id]
-    redirect_to root_url if current_user == @order.user
+    unless current_user == @order.user
+      flash[:danger] = t "flash.invaild_order"
+      redirect_to root_url
+    end
+    if @order.paid == "unpaid"
+      flash[:danger] = t "flash.unpaid_order"
+      redirect_to root_url
+    end
   end
 
   def baokim(product_name, detail_movie, product_quantity, order_id)

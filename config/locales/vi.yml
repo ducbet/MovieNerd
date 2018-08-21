@@ -180,6 +180,8 @@ vi:
     edit_faild: "Cập nhật phòng thất bại"
     select_seat_failed: "Chọn ghế không thành công. Vui lòng thử lại."
     no_order: "Đơn hàng của bạn đã bị xoá. Xin liên hệ lại để hoàn tiền"
+    invaild_order: "Không thể xem order của người khác."
+    unpaid_order: "Order này chưa được thanh toán."
 
   sessions:
     new:

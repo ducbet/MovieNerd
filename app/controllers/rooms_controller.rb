@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :logged_in_user, only: [:index]
+  before_action :logged_in_user, only: [:show]
   before_action :load_support, only: [:show]
 
   def show

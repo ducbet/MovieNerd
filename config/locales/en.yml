@@ -173,6 +173,8 @@ en:
     edit_faild: "Edit room failed"
     select_seat_failed: "Select seat faild. Please try again"
     no_order: "Your order has been deleted. Pls contact for refund"
+    invaild_order: "You can't see others' orders."
+    unpaid_order: "Order hasn't been paid."
 
   sessions:
     new:
