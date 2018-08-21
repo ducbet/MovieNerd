@@ -1,9 +1,8 @@
 <% if results.nil? || results.empty? %>
   <%= t ".no_result" %>
 <% else %>
-  <div class="content main-movie">
   <%= paginate results, theme: "twitter-bootstrap-3", remote: true %>
-
+  <div class="content main-movie">
     <ul id="movies" class="movies product-grid product-grid--max-4-col center">
       <%= render results %>
     </ul>
