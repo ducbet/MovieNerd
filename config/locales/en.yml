@@ -277,7 +277,6 @@ en:
       screen: "Screen"
       select_seat: "Please choose seats"
 
-
   activate_mail:
     title: "Account activation"
     activate: "Activate"
@@ -368,3 +367,14 @@ en:
     go_back: "You can go back to home page by clicking the button below."
     back: "Back to "
     home_page: "home page"
+
+  orders:
+    room: "Room: "
+    order: "Order no."
+    seats: "Chosen seats: "
+    movie: "Movie: "
+    time: "Time: "
+
+  seats:
+    row: "Row:"
+    number: "Number:"

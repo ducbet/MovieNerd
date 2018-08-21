@@ -13,5 +13,16 @@ class Order < ApplicationRecord
   def delete_unpaid
     destroy if unpaid?
   end
-  handle_asynchronously :delete_unpaid, run_at: Proc.new { 1.minutes.from_now }
+  handle_asynchronously :delete_unpaid, run_at: Proc.new {5.minutes.from_now}
+
+  def show_seats
+    str = []
+    seats.each do |seat|
+      str.push(" #{I18n.t('seats.row')}#{seat.row}x"\
+        "#{I18n.t('seats.number')}#{seat.number} ")
+      str.push("||")
+    end
+    str.pop
+    str
+  end
 end

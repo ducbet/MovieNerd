@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :users do
       collection do
         resources :orders, only: [:show]
+      member do
+        resources :orders, only: [:index]
       end
     end
     namespace :admin do

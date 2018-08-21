@@ -14,7 +14,7 @@
             <b class="caret"></b>
           <ul class="dropdown-menu">
             <% if current_user.admin? || current_user.mod? %>
-              <li><%= link_to t(".admin"), admin_path %></li>
+              <li><%= link_to t(".admin"), admin_movies_path %></li>
             <% end %>
             <li><%= link_to t(".profile"), current_user %></li>
             <li>
