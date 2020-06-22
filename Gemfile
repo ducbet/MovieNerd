@@ -26,8 +26,6 @@ gem 'will_paginate', '~> 3.3.0'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Sentry: error tracking
 gem 'sentry-raven'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
