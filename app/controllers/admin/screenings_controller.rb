@@ -3,7 +3,7 @@ class Admin::ScreeningsController < Admin::BaseController
 
   def index
     @screenings = Screening.not_show_yet.page(params[:page])
-                           .per Settings.admin.per_page
+                           .per_page Settings.admin.per_page
   end
 
   def new

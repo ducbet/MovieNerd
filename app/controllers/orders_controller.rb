@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     @order = Order.find_by(id: params[:id])
-                  .page(params[:page]).per Settings.admin.per_page
+                  .page(params[:page]).per_page Settings.admin.per_page
   end
 
   def show; end

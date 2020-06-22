@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @user = User.order_user.page(params[:page])
-                .per Settings.admin.per_page
+                .per_page Settings.admin.per_page
   end
 
   def show; end
