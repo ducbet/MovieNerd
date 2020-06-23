@@ -27,7 +27,8 @@ movie = Movie.create! title: "Wall-E",
   language: "Eng",
   genre: "Animation | Adventure | Family | Sci-Fi",
   release_date: Time.current.tomorrow,
-  picture: image_data
+  picture: image_data,
+  trailer_url: "https://www.youtube.com/watch?v=SX_ViT4Ra7k"
 
 
 movie2 = Movie.create! title: "World wall Z",
@@ -40,6 +41,7 @@ movie2 = Movie.create! title: "World wall Z",
   genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
   release_date: Time.current.tomorrow,
   picture: image_data
+  trailer_url: "https://www.youtube.com/watch?v=SX_ViT4Ra7k"
 
 30.times do |n|
   title = Faker::Lorem.sentence word_count: 4
@@ -53,6 +55,7 @@ movie2 = Movie.create! title: "World wall Z",
     genre: "Action | Adventure | Horror | Sci-Fi",
     release_date: Time.current.tomorrow,
     picture: image_data
+    trailer_url: "https://www.youtube.com/watch?v=SX_ViT4Ra7k"
 end
 
 room1 = Room.create! name: "G1",
