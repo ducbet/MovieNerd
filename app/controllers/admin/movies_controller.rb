@@ -4,7 +4,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def index
     @movies = Movie.page(params[:page])
-                   .per_page Settings.admin.per_page
+                   .per Settings.admin.per_page
   end
 
   def new
