@@ -40,7 +40,7 @@ movie2 = Movie.create! title: "World wall Z",
   language: "Eng",
   genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
   release_date: Time.current.tomorrow,
-  picture: image_data
+  picture: image_data,
   trailer_url: "https://www.youtube.com/watch?v=SX_ViT4Ra7k"
 
 30.times do |n|
@@ -54,7 +54,7 @@ movie2 = Movie.create! title: "World wall Z",
     language: "Eng",
     genre: "Action | Adventure | Horror | Sci-Fi",
     release_date: Time.current.tomorrow,
-    picture: image_data
+    picture: image_data,
     trailer_url: "https://www.youtube.com/watch?v=SX_ViT4Ra7k"
 end
 
