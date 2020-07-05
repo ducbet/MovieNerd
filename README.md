@@ -2,7 +2,9 @@
 > This is a cinema's web application using Ruby on Rails
 
 ## Demo
-http://movie-nerd-1536.herokuapp.com/en
+https://movie-nerd-1536.herokuapp.com/en
+
+![Demo.gif](./public/uploads/videos/movie-nerd.gif)
 
 ## Features
 - Multiple languages support (English, Vietnamese)
