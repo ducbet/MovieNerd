@@ -1,5 +1,5 @@
 # Movie Nerd
-> This is a  web application using Ruby on Rails
+> This is a cinema's web application using Ruby on Rails
 
 ## Demo
 http://movie-nerd-1536.herokuapp.com/en
